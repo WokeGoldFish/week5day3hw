@@ -1,0 +1,22 @@
+{% extends 'insta/base.html' %}
+
+{% block content%}
+    <h1>
+        THIS IS THE HOME PAGE
+    </h1>
+    <button type="button" class="btn btn-light"><a href= 'createpost'>Create Post</a></button>
+    {% for p in posts %}
+    <a href = "{% url 'post' post_id=p.id %}" class="card" style="width: 18rem;">
+        <img src="{{ p.img_url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{ p.author }}</h5>
+        <p class="card-text">{{ p.caption }}</p>
+        </div>
+    </a>
+
+
+    {% endfor %}
+
+
+
+{% endblock %}
